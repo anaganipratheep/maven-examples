@@ -19,13 +19,7 @@ node {
     sh 'mvn sonar:sonar-sonar.projectKey=pratheep1993_maven-examples -Dsonar.organization=pratheep1993 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=a4ff6418a1ae790dce1e35e3517bca92342ac741' 
       }
     }
-    stage('Quality Gate'){
-          timeout(time: 1, unit: 'HOURS') {
-              def qg = waitForQualityGate()
-              if (qg.status != 'OK') {
-    
-              }
-          }
+   
     }
  
    stage('Package to Jfrog') {
